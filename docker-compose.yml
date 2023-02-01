@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  php-apache-environment:
+    container_name: php-apache
+    image: php:8.0-apache
+    volumes:
+      - ./basic-auth/:/var/www/html/
+    ports:
+      - 8000:80
+  web-dvwa:
+    container_name: dvwa
+    image: vulnerables/web-dvwa:latest
+    ports:
+      - 127.0.0.1:80:80
